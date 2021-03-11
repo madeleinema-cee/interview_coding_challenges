@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../main.css">
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="top-nav">
+        <a href="#" onclick="toggleDisplay('side-nav')">
+            <div class="sandwhich-button-container">
+                <div class="sandwhich-button-component"></div>
+                <div class="sandwhich-button-component"></div>
+                <div class="sandwhich-button-component"></div>
+            </div>
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="side-nav" id="side-nav">
+            <a href="#">
+                <div class="side-nav-button v-align active">General Overview</div>
+            </a>
+        </div>
+
+        <div class="main">
+            <div id="main-header-container">
+
+                <h1 class="float-left">Trends</h1>
+
+                <div id="dropdown-container">
+                    <div class="dropdown v-align float-left">
+                        <span>Company</span>
+                    </div>
+
+                    <div class="dropdown-carrot-container v-align float-left">
+                        <i class="arrow down"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <script>
+        function toggleDisplay(ele) {
+            var element = document.getElementById(ele)
+            element.style.display = element.style.display === 'none' ? 'block' : 'none'
+        }
+    </script>
+
+
+
+</body>
+</html>
