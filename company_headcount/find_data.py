@@ -17,19 +17,17 @@ class GetDataForPlot:
 
     def get_data(self):
         data = {}
+        months = []
         for row in self.results:
             company = row['company']
-            if row['month'] not in self.months:
-                self.months.append(row['month'])
+
             if company not in data:
                 data[company] = {
-
                     'headcount': [row['headcount']]
                 }
             else:
                 if row['headcount'] not in data[company]['headcount']:
                     data[company]['headcount'].append(row['headcount'])
-
         return data
 
 
