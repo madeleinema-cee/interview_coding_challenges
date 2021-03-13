@@ -16,7 +16,3 @@ def home(request):
         'companyData': json.dumps(companyData),
     }
     return render(request, 'index.html', context)
-
-
-def about(request):
-    return HttpResponse('<h1>About</h1>')

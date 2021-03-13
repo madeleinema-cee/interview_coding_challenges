@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,63 +11,55 @@
     <script src="{% static '/js/script.js' %}" type="text/javascript"></script>
 </head>
 <body>
-    <div class="top-nav grid">
-        <a href="#" onclick="toggleDisplay('side-nav')">
-            <div class="sandwich-button-container">
-                <div class="sandwich-button-component"></div>
-                <div class="sandwich-button-component"></div>
-                <div class="sandwich-button-component"></div>
-            </div>
+<div class="top-nav grid">
+    <a href="#">
+        <div class="sandwich-button-container" onclick="toggleDisplay('side-nav')">
+            <div class="sandwich-button-component"></div>
+            <div class="sandwich-button-component"></div>
+            <div class="sandwich-button-component"></div>
+        </div>
+    </a>
+</div>
+
+<div class="grid-container">
+    <div class="side-nav grid" id="side-nav">
+        <a href="#">
+            <div class="side-nav-button v-align active">General Overview</div>
         </a>
     </div>
 
-    <div class="grid-container">
-        <div class="side-nav grid" id="side-nav">
-            <a href="#">
-                <div class="side-nav-button v-align active">General Overview</div>
-            </a>
-        </div>
-
-        <div class="main grid">
-            <div id="main-header-container">
-
-                <h1 class="float-left">Trends</h1>
-
-                <div id="dropdown-container float-left" class="dropdown-container">
-                    <div>
-                        <div class="dropdown v-align float-left">
-                            <span>Company</span>
-                        </div>
-
-                        <div class="dropdown-carrot-container v-align float-left" onclick="toggleDisplay('dropdown-content')">
-                            <i class="arrow down dropbtn"></i>
-                        </div>
+    <div class="main grid">
+        <div id="main-header-container">
+            <h1 class="float-left">Trends</h1>
+            <div id="dropdown-container" class="dropdown-container">
+                <div>
+                    <div class="dropdown v-align float-left">
+                        <span>Company</span>
                     </div>
 
-                    <div class="dropdown-content" id="dropdown-content">
-                        <div onclick="handleDropdown('company-1')" id="company-1">Test</div>
-                        <div onclick="handleDropdown('company-2')" id="company-2">Test</div>
-                        <div onclick="handleDropdown('company-3')" id="company-3">Test</div>
-                        <div onclick="handleDropdown('company-4')" id="company-4">Test</div>
-                        <div onclick="handleDropdown('company-5')" id="company-5">Test</div>
-                        <div onclick="handleDropdown('company-6')" id="company-6">Test</div>
+                    <div type="button" class="dropdown-carrot-container dropbtn v-align float-left"
+                         onclick="toggleDisplay('dropdown-content'), createDropdownClickListener()">
+                        <span class="arrow down"></span>
                     </div>
+                </div><br>
 
-
-                </div>
-            </div>
-
-            <div class="plot-container clearfix ">
-                <div id="plot"></div>
+                <div class="dropdown-content" id="dropdown-content"></div>
             </div>
         </div>
+        <br><br>
 
+        <div class="plot-container clearfix">
+            <div id="plot"></div>
+        </div>
     </div>
 
-    <script>
-        let data = JSON.parse("{{ companyData | escapejs}}");
-        generatePlot(data)
-    </script>
+</div>
+
+<script>
+    let companyData = JSON.parse("{{ companyData | escapejs }}");
+    populateDropdown()
+    parseSelectedCompanyData()
+</script>
 
 </body>
 </html>
