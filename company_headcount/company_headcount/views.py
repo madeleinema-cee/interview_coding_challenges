@@ -1,18 +1,22 @@
+import json
+
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from find_data import GetDataForPlot
-import json
+from retrieve_company_data import RetrieveCompanyData
 
 
 def home(request):
-    g = GetDataForPlot()
+    r = RetrieveCompanyData()
+    months, headcounts = r.main()
+
     companyData = {
-        "months": g.get_months(),
-        "headcounts": g.get_data()
+        "months": months,
+        "headcounts": headcounts
     }
 
     context = {
         'companyData': json.dumps(companyData),
     }
+
     return render(request, 'index.html', context)

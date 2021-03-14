@@ -63,10 +63,12 @@ function generatePlot(data) {
             font: {
                 family: 'Roboto',
                 size: 24,
-                weight: '500',
+                weight: 500,
                 color: '#2D426A, 100%',
-                align: 'left'
-            }
+                align: 'left',
+            },
+            xref: 'paper',
+            x: 0
         }
     };
     let config = {responsive: true};
@@ -75,11 +77,15 @@ function generatePlot(data) {
 
 function toggleDisplay(ele) {
     let element = document.getElementById(ele);
+    let icon = document.getElementById('icon');
     let computedDisplay = window.getComputedStyle(element).display;
     if (computedDisplay === 'none') {
         element.style.display = 'block';
+        icon.classList.replace('down', 'up');
     } else {
         element.style.display = 'none';
+        icon.classList.replace('up', 'down');
+        parseSelectedCompanyData();
     }
 }
 
@@ -95,9 +101,12 @@ function createDropdownClickListener() {
 function DropdownClickListener(event) {
     let dropdownContainer = document.getElementById("dropdown-container");
     let dropdown = document.getElementById("dropdown-content");
+        let icon = document.getElementById('icon');
+
 
     if (!dropdownContainer.contains(event.target) && event.target !== dropdownContainer) {
         dropdown.style.display = 'none';
+        icon.classList.replace('up', 'down');
         parseSelectedCompanyData();
         document.removeEventListener('click', DropdownClickListener);
     }
