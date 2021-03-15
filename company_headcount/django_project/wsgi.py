@@ -14,3 +14,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
 
 application = get_wsgi_application()
+
+
+/var/log/revelio/revelio.err.log
+/var/log/revelio/revelio.out.log

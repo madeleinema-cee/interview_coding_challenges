@@ -1,6 +1,5 @@
 import argparse
 import csv
-import os
 
 from db import Db
 
