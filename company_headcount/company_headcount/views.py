@@ -1,6 +1,4 @@
 import json
-
-from django.http import HttpResponse
 from django.shortcuts import render
 
 from retrieve_company_data import RetrieveCompanyData
