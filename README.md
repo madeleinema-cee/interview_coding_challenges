@@ -31,7 +31,7 @@ cd company_headcount && python3 manage.py runserver
 ```
 
 
-##Author
+## Author
 Madeleine Ma - madeleinema07@gmail.com
 
 Check my portfolio: https://madeleinema.com
