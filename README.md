@@ -5,14 +5,14 @@ By clicking on the Dropdown menu, up to three companies can be selected.
 
 The demo website is deployed on my Linux Ubuntu 20.10 server.
 
-**Check** http://96.30.199.144:8100/ for a live demo 
+Check http://96.30.199.144:8100/ for a live demo 
 
 ##Getting Started
 
-###1. Download file
+##1. Download file
 In order to have Company Headcount working, you need to have the <i>Assignment Part I.zip</i> file downloaded. 
 
-###2. Install Dependencies
+##2. Install Dependencies
 Once you unzipped the file on your local machine, go to its directory and install dependencies by running:
 
 macOS and Linux:
@@ -25,7 +25,7 @@ Windows:
 python3 -m pip install -r requirements.txt
 ```
 
-###3. Run app
+##3. Run app
 ```
 cd company_headcount && python3 manage.py runserver 
 ```
