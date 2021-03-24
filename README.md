@@ -12,7 +12,7 @@ The demo website is deployed on my Linux Ubuntu 20.10 server.
 ## Getting Started
 
 ### 1. Download file
-In order to have Company Headcount working, you need to have the <em>Assignment Part I.zip</em>. 
+In order to have Company Headcount working, you need to have to download or clone the repository. 
 
 ### 2. Install Dependencies
 Once you unzipped the file on your local machine, go to its directory and install dependencies by running:
