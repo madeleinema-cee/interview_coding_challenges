@@ -1,6 +1,6 @@
-# Company Headcount
+# A Simple Plotly Chart with Django
 
-Company Headcount is a data visualization website made with Python framework Django, SQLite database,
+This is a data visualization website made with Python framework Django, SQLite database,
 JavaScript, HTML, CSS, and Plotly JavaScript Graphing library. 
 The website presents an interactive line chart showing the headcount for companies for every month between 2008 to 2019.
 By clicking on the Dropdown menu, up to three companies can be selected and the corresponding chart will load with the data.
